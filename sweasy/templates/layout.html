@@ -11,6 +11,39 @@
 </head>
 <body class="sweasy-gradient">
     <div class="sweasy-main-container sweasy-gold-border container my-5 p-0">
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent sweasy-navbar">
+            <div class="container-fluid">
+                <div class="navbar-collapse d-flex">
+                    <ul class="navbar-nav mr-auto d-flex flex-grow-1">
+                        <li class="nav-item sweasy-nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        </li>
+                        <li class="nav-item sweasy-nav-item">
+                            <a class="nav-link" href="{{ url_for('get_content') }}">Content</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a class="navbar-brand" href="{{ url_for('index') }}">
+                            <div class="sweasy-logo-container d-flex justify-content-center bg-transparent border-0">
+                                <h1 class="h1 text-center align-self-center py-4 sweasy-logo">
+                                    SWEASY
+                                </h1>
+                            </div>
+                        </a>
+                    </div>
+                    <ul class="navbar-nav ml-auto d-flex flex-grow-1 justify-content-end">
+                        <li class="nav-item sweasy-nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item sweasy-nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         {% block content %}{% endblock %}
     </div>
 </body>

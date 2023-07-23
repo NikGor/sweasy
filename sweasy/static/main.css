@@ -16,6 +16,10 @@ body.sweasy-gradient {
     width: 450px;
     height: 180px;
     transition: 0.7s;
+    top: -20px; /* Add a negative top value to shift the logo upward */
+    position: relative; /* Add position absolute to overlap the top border */
+    top: -20px; /* Add a negative margin to shift the logo upward */
+    z-index: 10; /* Add higher z-index to overlap other elements */
 }
 
 .sweasy-logo-container:hover {
@@ -28,6 +32,13 @@ body.sweasy-gradient {
     color: #b8860b;
     letter-spacing: 3px;
 }
+
+@media (max-width: 991.98px) {
+    .sweasy-logo-container {
+        display: none;
+    }
+}
+
 
 .sweasy-card-group-container {
     margin: 0;
@@ -96,3 +107,22 @@ body.sweasy-gradient {
   line-height: 1; /* Выровнять буквицу по базовой линии */
 }
 
+.sweasy-navbar {
+    font-family: 'Helvetica Neue';
+    color: #ecd99f;
+    height: auto;
+}
+
+.sweasy-nav-item {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #ecd99f;
+    transition: 0.7s;
+}
+
+.sweasy-nav-item:hover,
+.sweasy-nav-item:focus,
+.sweasy-nav-item:active {
+    transform: scale(1.1);
+    border-bottom: 1px solid #ecd99f;
+}
