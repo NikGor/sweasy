@@ -1,3 +1,8 @@
+.my-8 {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+}
+
 body.sweasy-gradient {
     background: linear-gradient(to bottom, #2c3c41, #0c131f);
 }
@@ -16,14 +21,11 @@ body.sweasy-gradient {
     width: 450px;
     height: 180px;
     transition: 0.7s;
-    top: -20px; /* Add a negative top value to shift the logo upward */
-    position: relative; /* Add position absolute to overlap the top border */
-    top: -20px; /* Add a negative margin to shift the logo upward */
-    z-index: 10; /* Add higher z-index to overlap other elements */
-}
-
-.sweasy-logo-container:hover {
-    transform: scale(1.03);
+    position: absolute; /* Добавьте position absolute, чтобы логотип мог быть позиционирован относительно окна браузера */
+    left: 50%; /* Позиционируйте логотип на 50% от левого края окна браузера */
+    top: 8%;
+    transform: translate(-50%, -50%); /* Сдвигает логотип вверх и влево на половину его высоты и ширины, центрируя его */
+    z-index: 10; /* Устанавливает z-index выше, чем у других элементов, чтобы логотип перекрывал их */
 }
 
 .sweasy-logo {
@@ -33,19 +35,22 @@ body.sweasy-gradient {
     letter-spacing: 3px;
 }
 
+.sweasy-logo-placeholder {
+    width: 450px;
+    height: 80px;
+}
+
+
 @media (max-width: 991.98px) {
     .sweasy-logo-container {
         display: none;
     }
 }
 
-
 .sweasy-card-group-container {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, rgba(44, 60, 65, 0),
-                                          rgba(12, 19, 31, 0.9) 10%,
-                                          rgba(12, 19, 31, 1));
+    background: linear-gradient(to bottom, rgba(33, 37, 41, 0), rgba(33, 37, 41, 0.95) 10%, rgba(33, 37, 41, 0.95));
 }
 
 .sweasy-card {
@@ -108,16 +113,18 @@ body.sweasy-gradient {
 }
 
 .sweasy-navbar {
-    font-family: 'Helvetica Neue';
-    color: #ecd99f;
+    font-family: 'Helvetica Neue'
     height: auto;
 }
 
 .sweasy-nav-item {
     font-size: 18px;
     margin-right: 10px;
-    color: #ecd99f;
     transition: 0.7s;
+}
+
+.sweasy-nav-item a {
+    color: #ecd99f !important;
 }
 
 .sweasy-nav-item:hover,
