@@ -9,7 +9,20 @@ readme = "README.md"
 python = "^3.10"
 django = "^4.2.3"
 flask = "^2.3.2"
+gunicorn = "^21.2.0"
+flask-wtf = "^1.1.1"
+wtforms = "^3.0.1"
+sqlalchemy = "^2.0.19"
+flask-sqlalchemy = "^3.0.5"
+python-dotenv = "^1.0.0"
+psycopg2-binary = "^2.9.6"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+flask-testing = "^0.8.1"
+flake8 = "^6.0.0"
+dj-database-url = "^2.0.0"
 
 [build-system]
 requires = ["poetry-core"]
