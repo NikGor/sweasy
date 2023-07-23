@@ -10,17 +10,23 @@ body.sweasy-gradient {
 }
 
 .sweasy-logo-container {
-    background-size: cover;
+    background-image: url("logo.png");
     background-position: center;
-    width: 100%;
-    height: 100px;
+    background-size: cover;
+    width: 450px;
+    height: 180px;
+    transition: 0.7s;
+}
+
+.sweasy-logo-container:hover {
+    transform: scale(1.03);
 }
 
 .sweasy-logo {
     font-family: 'Playfair Display';
     font-weight: 700;
-    color: #ecd99f;
-    letter-spacing: 9px;
+    color: #b8860b;
+    letter-spacing: 3px;
 }
 
 .sweasy-card-group-container {
@@ -34,11 +40,23 @@ body.sweasy-gradient {
 .sweasy-card {
     font-family: 'Helvetica Neue';
     color: #ecd99f;
+    font-size: 18px;
+    transition: 0.7s; /
+}
+
+.sweasy-card:hover {
+    transform: scale(1.1);
+}
+
+.sweasy-content-container {
+    font-family: 'Helvetica Neue';
+    color: #ecd99f;
+    font-size: 18px;
 }
 
 .sweasy-gold-border {
-    border: 2px double #ecd99f; /* Золотой цвет (цвет по коду) */
-    border-radius: 35px; /* Округление углов рамки */
+    border: 2px double #ecd99f;
+    border-radius: 35px;
     overflow: hidden;
 }
 
@@ -49,17 +67,32 @@ body.sweasy-gradient {
 .sweasy-gold-btn {
     color: #ecd99f;
     border-color: #ecd99f;
+    transition: 0.7s;
 }
 
 .sweasy-gold-btn:hover,
 .sweasy-gold-btn:focus,
 .sweasy-gold-btn:active {
-    transition: 0.3s; /* Эффект замедления на 0.3 секунды */
     background-color: #ecd99f;
     color: #000;
+    transform: scale(1.1);
 }
 
 .sweasy-gold-btn:focus,
 .sweasy-gold-btn:active {
-    box-shadow: none; /* Убираем тень для активного состояния */
+    box-shadow: none;
 }
+
+.sweasy-divider {
+    border-top: 1px solid #ecd99f; /* Цвет и толщина линии */
+    width: 50%; /* Ширина линии */
+    margin: 20px auto; /* Отступы сверху и снизу, и автоматический отступ слева и справа для центрирования */
+}
+
+.drop-cap::first-letter {
+  font-size: 3em; /* Размер первой буквы */
+  float: left; /* Переместить букву влево */
+  margin-right: 8px; /* Отступ между буквицей и остальным текстом */
+  line-height: 1; /* Выровнять буквицу по базовой линии */
+}
+

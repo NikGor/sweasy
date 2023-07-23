@@ -19,5 +19,10 @@ def index():
     return render_template('index.html', cards=cards)
 
 
+@app.route('/content')
+def get_content():
+    return render_template('content_page.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
