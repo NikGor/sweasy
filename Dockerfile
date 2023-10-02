@@ -14,8 +14,8 @@ RUN pip install poetry
 RUN poetry config virtualenvs.create false \
   && poetry install --no-interaction --no-ansi
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Expose the port the app runs in
+EXPOSE 8000
 
-# Run app.py when the container launches
-CMD ["gunicorn", "sweasy.app:app"]
+# Define the command to run the app
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

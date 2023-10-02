@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-
+{% load static %}
 {% block content %}
 <div class="bg-dark sweasy-content-container mh-100">
 <div class="container p-5">
@@ -11,7 +11,7 @@
     <hr class="sweasy-divider mb-5">
     <div class="row mb-5">
         <div class="col-12 col-md-6">
-            <img src="{{ url_for('static', filename='photo1.png') }}" alt="Швейцария - изображение 1" class="img-fluid rounded mb-3">
+            <img src="{% static 'photo1.png' %}" alt="Швейцария - изображение 1" class="img-fluid rounded mb-3">
         </div>
         <div class="col-12 col-md-6">
             <p class="drop-cap">Швейцария известна своими живописными пейзажами, включая прекрасные горы и чистые озера.
@@ -29,13 +29,13 @@
                 предлагая некоторые из самых лучших трасс для лыжного спорта в мире.</p>
         </div>
         <div class="col-12 col-md-6">
-            <img src="{{ url_for('static', filename='photo2.png') }}" alt="Швейцария - изображение 2"
+            <img src="{% static 'photo2.png' %}" alt="Швейцария - изображение 2"
                  class="img-fluid rounded mb-3">
         </div>
     </div>
     <div class="row mb-5">
         <div class="col-12 col-md-6">
-            <img src="{{ url_for('static', filename='photo3.png') }}" alt="Швейцария - изображение 3"
+            <img src="{% static 'photo3.png' %}" alt="Швейцария - изображение 3"
                  class="img-fluid rounded mb-3">
         </div>
         <div class="col-12 col-md-6">
@@ -53,7 +53,7 @@
                 что дает туристам возможность наслаждаться своим пребыванием без всяких беспокойств.</p>
         </div>
         <div class="col-12 col-md-6">
-            <img src="{{ url_for('static', filename='photo4.png') }}" alt="Швейцария - изображение 4"
+            <img src="{% static 'photo4.png' %}" alt="Швейцария - изображение 4"
                  class="img-fluid rounded mb-3">
         </div>
     </div>

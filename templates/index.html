@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-center sweasy-gold-border-thin p-1">{{ card.title }}</h5>
                     <p class="card-text h-75">{{ card.description }}</p>
-                    <a href="{{ url_for('get_content') }}" class="btn btn-dark sweasy-gold-btn">Кнопка</a>
+                    <a href="{% url 'get_content' %}" class="btn btn-dark sweasy-gold-btn">Кнопка</a>
                 </div>
             </div>
         </div>
