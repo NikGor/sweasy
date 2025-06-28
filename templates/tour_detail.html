@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<div class="bg-dark sweasy-content-container mh-100 mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h2>{{ tour.title }}</h2>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ tour.description|safe }}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Duration: {{ tour.duration }} days</li>
+          <li class="list-group-item">Price: ${{ tour.price }}</li>
+          <li class="list-group-item">Max Participants: {{ tour.max_participants }}</li>
+          <li class="list-group-item">Guide Name: {{ tour.guide_name }}</li>
+          <li class="list-group-item">Meeting Point: {{ tour.meeting_point }}</li>
+          <li class="list-group-item">Available: {% if tour.is_available %}Yes{% else %}No{% endif %}</li>
+        </ul>
+      </div>
+    </div>
+</div>
+{% endblock %}

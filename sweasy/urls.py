@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from sweasy.views import IndexView, ContentView
+from django.urls import re_path, include
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('get_content/', ContentView.as_view(), name='get_content'),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('tour/', include('sweasy.tour.urls')),
 ]

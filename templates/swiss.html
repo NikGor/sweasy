@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+.logo {
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+}
+
+.round-window-1 {
+    width: 150px;
+    height: 150px;
+    overflow: ellipsis;
+    border-radius: 50%;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.round-window-1:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.round-window-2 {
+    width: 100px;
+    height: 100px;
+    overflow: ellipsis;
+    border-radius: 50%;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.round-window-2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.round-window-in-1 {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+.round-window-in-2 {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    z-index: 20;
+}
+
+
+/* @media (max-width: 768px) {
+    .logo-container {
+        bottom: -25px; /* адаптация под мобильные устройства */
+    /* } */
+
+    /* .round-window-1, .round-window-2 {
+        width: 100px;
+        height: 100px;
+    }
+} */ 
+
+
+</style>
+
+<body>
+
+    <main class="container border p-3">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container position-relative">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Главная</a>
+                <a class="nav-item nav-link" href="#">Туры</a>
+            </div>
+            <div class="logo col-md-3 position-absolute top-100 start-50 translate-middle">
+                <img src="https://via.placeholder.com/300x100" class="logo p-2 img-fluid border bg-white" alt="логотип">
+            </div>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Еще пункт</a>
+                <a class="nav-item nav-link" href="#">О нас</a>
+            </div>
+        </div>
+      </nav>
+      
+        <div class="hero-image px-0">
+          <img src="https://via.placeholder.com/1200x500" alt="герой-картинка">
+        </div>
+
+
+        <div class="row position-relative">
+          <div class="col-6 px-0">
+              <div class="card rounded-0">
+                  <div class="card-body">
+                      <p class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                          Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                          Vivamus in vehicula ex. Fusce ac scelerisque est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                          Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                          Vivamus in vehicula ex. Fusce ac scelerisque est.
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="round-window-1 px-0 position-absolute top-0 start-50 translate-middle bg-white border">
+            <div class="round-window-in-1 px-0 bg-white position-absolute top-50 start-50 translate-middle">
+              <img src="https://via.placeholder.com/120" class="round-img" alt="круглое окно">
+            </div>
+          </div>
+          <div class="col-6 px-0">
+              <div class="card rounded-0">
+                  <div class="card-body">
+                      <p class="card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod quam vel enim tristique, ut convallis enim scelerisque.
+                          Sed scelerisque, augue vel semper scelerisque, nisl nulla ultricies orci, ac semper orci magna eu mauris.
+                          Phasellus scelerisque ligula non est eleifend, eget semper lectus vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                          Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                          Vivamus in vehicula ex. Fusce ac scelerisque est.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="row position-relative">
+        <div class="col-6 px-0">
+            <div class="card rounded-0">
+                <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                        Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                        Vivamus in vehicula ex. Fusce ac scelerisque est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                        Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                        Vivamus in vehicula ex. Fusce ac scelerisque est.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="round-window-2 px-0 position-absolute top-50 start-50 translate-middle bg-white border">
+          <div class="round-window-in-2 px-0 bg-white position-absolute top-50 start-50 translate-middle">
+            <img src="https://via.placeholder.com/80" class="round-img" alt="круглое окно">
+          </div>
+        </div>
+        <div class="col-6 px-0">
+            <div class="card rounded-0">
+                <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod quam vel enim tristique, ut convallis enim scelerisque.
+                        Sed scelerisque, augue vel semper scelerisque, nisl nulla ultricies orci, ac semper orci magna eu mauris.
+                        Phasellus scelerisque ligula non est eleifend, eget semper lectus vehicula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper mauris orci, et iaculis nibh facilisis et.
+                        Morbi venenatis, mauris eget ultricies scelerisque, mauris mi scelerisque quam, at accumsan ante mauris vel mi.
+                        Vivamus in vehicula ex. Fusce ac scelerisque est.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </main>
+
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container">
+            <span class="text-muted">Подвал сайта</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

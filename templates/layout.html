@@ -4,46 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Sweasy</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="sweasy-gradient vh-100">
+<body class="sweasy-gradient">
     <!-- Логотип перемещен вне контейнера -->
-    <div class="sweasy-logo-container d-flex justify-content-center bg-transparent border-0">
-        <h1 class="h1 text-center align-self-center py-4 sweasy-logo">
-            SWEASY
-        </h1>
-    </div>
-    <div class="sweasy-main-container sweasy-gold-border container my-8 p-0">
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sweasy-navbar">
-            <div class="container-fluid">
-                <div class="navbar-collapse d-flex">
-                    <ul class="navbar-nav mr-auto d-flex flex-grow-1">
-                        <li class="nav-item sweasy-nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">Home</a>
-                        </li>
-                        <li class="nav-item sweasy-nav-item">
-                            <a class="nav-link" href="{% url 'get_content' %}">Content</a>
-                        </li>
-                    </ul>
-                    <div class="sweasy-logo-placeholder"></div>
-                    <ul class="navbar-nav ml-auto d-flex flex-grow-1 justify-content-end">
-                        <li class="nav-item sweasy-nav-item">
-                            <a class="nav-link" href="{% url 'get_content' %}">Contact</a>
-                        </li>
-                        <li class="nav-item sweasy-nav-item">
-                            <a class="nav-link" href="{% url 'get_content' %}">About</a>
-                        </li>
-                    </ul>
+     <main class="container p-3">
+            <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark sweasy-navbar pt-5 sweasy-navbar">
+            <div class="container position-relative">
+                <div class="navbar-nav ms-5 mb-2">
+                    <div class="ms-5"></div>
+                    <a class="nav-link nav-item sweasy-nav-item mx-2" href="{% url 'index' %}">Home</a>
+                    <a class="nav-link nav-item sweasy-nav-item mx-2" href="{% url 'get_content' %}">Content</a>
+                </div>
+
+                <div class="logo col-md-3 position-absolute top-100 start-50 translate-middle">
+                    <img src="static/logo.png" class="logo p-2 img-fluid" alt="логотип">
+                </div>
+
+                <div class="navbar-nav me-5 mb-2">
+                    <a class="nav-link nav-item sweasy-nav-item mx-2" href="{% url 'get_content' %}">Contact</a>
+                    <a class="nav-link nav-item sweasy-nav-item mx-2" href="{% url 'get_content' %}">About</a>
+                    <div class="me-5"></div>
                 </div>
             </div>
         </nav>
 
-        {% block content %}{% endblock %}
+    <div class="p-2 border sweasy-gold-border"
+         style="max-width: 1100px; margin-left: auto; margin-right: auto;
+         background-image: linear-gradient(to bottom right, #ecd99f, #f3e5c0 50%, #ecd99f);">
+        <div class="sweasy-main-container sweasy-gold-border container p-0">
+                {% block content %}{% endblock %}
+        </div>
     </div>
+
+    </main>
 </body>
 </html>

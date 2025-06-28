@@ -7,25 +7,33 @@ body.sweasy-gradient {
     background: linear-gradient(to bottom, #2c3c41, #0c131f);
 }
 
+.sweasy-navbar {
+    color: #ecd99f; /* Установка цвета текста навбара */
+    max-width: 1100px; /* Задайте максимальную ширину по вашему желанию */
+    margin-left: auto;
+    margin-right: auto; /* Это центрирует контейнер на странице */
+}
+}
+
+/* Убедитесь, что ссылки также используют этот цвет, если это необходимо */
+.sweasy-navbar .nav-link {
+    color: #ecd99f; /* Установка цвета текста для ссылок */
+}
+
+/* Вы можете также захотеть установить цвет при наведении */
+.sweasy-navbar .nav-link:hover {
+    color: #ffffff; /* Цвет текста при наведении */
+}
+
+
 .sweasy-main-container {
+    max-width: 1100px; /* Задайте максимальную ширину по вашему желанию */
+    margin-left: auto;
+    margin-right: auto; /* Это центрирует контейнер на странице */
     background-image: url("background.png");
     background-size: cover;
     background-position: center;
     width: 100%;
-}
-
-.sweasy-logo-container {
-    background-image: url("logo.png");
-    background-position: center;
-    background-size: cover;
-    width: 450px;
-    height: 180px;
-    transition: 0.7s;
-    position: absolute; /* Добавьте position absolute, чтобы логотип мог быть позиционирован относительно окна браузера */
-    left: 50%; /* Позиционируйте логотип на 50% от левого края окна браузера */
-    top: 8%;
-    transform: translate(-50%, -50%); /* Сдвигает логотип вверх и влево на половину его высоты и ширины, центрируя его */
-    z-index: 10; /* Устанавливает z-index выше, чем у других элементов, чтобы логотип перекрывал их */
 }
 
 .sweasy-logo {
@@ -57,11 +65,6 @@ body.sweasy-gradient {
     font-family: 'Helvetica Neue';
     color: #ecd99f;
     font-size: 18px;
-    transition: 0.7s ease-in-out;
-}
-
-.sweasy-card:hover {
-    transform: scale(1.1);
 }
 
 .sweasy-content-container {
@@ -132,4 +135,16 @@ body.sweasy-gradient {
 .sweasy-nav-item:active {
     transform: scale(1.1);
     border-bottom: 1px solid #ecd99f;
+}
+
+.round-window {
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.round-window:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }

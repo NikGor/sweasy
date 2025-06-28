@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from card.models import Card
+from sweasy.card.models import Card
 
 
 class IndexView(TemplateView):
