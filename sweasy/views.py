@@ -1,18 +1,11 @@
-from django.views.generic import TemplateView
-from card.models import Card
+from django.shortcuts import render
 
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['cards'] = Card.objects.all()
-        return context
-
-
-class ContentView(TemplateView):
-    template_name = 'content_page.html'
-
-    def get(self, request, *args, **kwargs):
-        return self.render_to_response({})
+def home_view(request):
+    return render(
+        request,
+        "home.html",
+        {
+            "hero_image_url": "https://dummyimage.com/1600x900/dfe7f2/1f3a5f.jpg&text=Sweasy+Swiss+Guide",
+        },
+    )
