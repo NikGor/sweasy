@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweasy — частный гид в Швейцарии</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        color: #10233b;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+        background:
+          linear-gradient(rgba(7, 24, 45, 0.45), rgba(7, 24, 45, 0.55)),
+          url("{{ hero_image_url }}") center / cover no-repeat;
+      }
+
+      .hero__content {
+        width: min(720px, 100%);
+        padding: 40px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 24px 60px rgba(16, 35, 59, 0.2);
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #45658d;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(40px, 7vw, 64px);
+        line-height: 1;
+      }
+
+      p {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <section class="hero__content">
+        <p class="eyebrow">Private guide in Switzerland</p>
+        <h1>Sweasy</h1>
+        <p>
+          Базовая стартовая страница для будущего сайта частного гида по Швейцарии:
+          лаконичный hero-блок, Django и готовая инфраструктура для дальнейшей
+          разработки.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
