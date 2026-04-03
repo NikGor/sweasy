@@ -1,15 +1,22 @@
-.PHONY: install test run
+PYTHON := poetry run python
+MANAGE := $(PYTHON) manage.py
+
+.PHONY: install run migrate makemigrations check test
 
 install:
 	poetry install
 
 run:
-	poetry run python sweasy/app.py
+	$(MANAGE) runserver 0.0.0.0:8000
 
-lint:
-	poetry run flake8 src
+migrate:
+	$(MANAGE) migrate
 
-amend-and-push:
-	git add .
-	git commit --amend --no-edit
-	git push --force
+makemigrations:
+	$(MANAGE) makemigrations
+
+check:
+	$(MANAGE) check
+
+test:
+	$(MANAGE) test
