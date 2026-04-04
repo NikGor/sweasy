@@ -1,8 +1,10 @@
+import json
 import mimetypes
 from pathlib import Path
 
 from django.conf import settings
 from django.http import FileResponse, HttpResponse, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import PageSnapshot
 
@@ -17,6 +19,19 @@ def page_api(request):
     response = JsonResponse(snapshot.data, json_dumps_params={"ensure_ascii": False})
     response["Access-Control-Allow-Origin"] = "*"
     return response
+
+
+@csrf_exempt
+def page_upload(request):
+    """Upload page config JSON to DB (POST only)."""
+    if request.method != "POST":
+        return JsonResponse({"error": "POST only"}, status=405)
+    try:
+        data = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "Invalid JSON"}, status=400)
+    snapshot = PageSnapshot.objects.create(data=data)
+    return JsonResponse({"ok": True, "id": snapshot.pk})
 
 
 def frontend_view(request):
