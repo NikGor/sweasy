@@ -18,10 +18,8 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir "poetry==$POETRY_VERSION" gunicorn
 
-COPY pyproject.toml poetry.lock /app/
-RUN poetry install --no-interaction --no-ansi --no-dev
-
 COPY . /app
+RUN poetry install --no-interaction --no-ansi --no-dev
 
 # Copy built frontend into Django static
 COPY --from=frontend /app/frontend/dist /app/frontend/dist
