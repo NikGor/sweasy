@@ -24,3 +24,6 @@ venv/
 
 # Local env
 .env
+
+# Instagram archive
+instagram_archive/
