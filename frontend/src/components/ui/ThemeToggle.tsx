@@ -1,3 +1,4 @@
+import Icon from "./Icon";
 import { useTheme } from "../../hooks/useTheme";
 
 export default function ThemeToggle() {
@@ -8,22 +9,22 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="relative flex items-center h-8 w-[72px] rounded-xl border-2 border-primary dark:border-white bg-surface dark:bg-[#0a0f1e] transition-colors duration-300 overflow-hidden font-headline font-black uppercase tracking-tighter text-[10px] px-1.5"
+      className="relative flex items-center h-9 w-[72px] rounded-xl border-2 border-primary dark:border-white bg-surface dark:bg-[#0a0f1e] transition-colors duration-300 overflow-hidden"
     >
-      {/* Labels */}
+      {/* Icons */}
       <span
-        className={`flex-1 text-center z-10 transition-colors duration-300 ${
+        className={`flex-1 flex items-center justify-center z-10 transition-colors duration-300 ${
           isDark ? "text-white/40" : "text-primary"
         }`}
       >
-        Lt
+        <Icon name="light_mode" filled={!isDark} className="text-[18px]" />
       </span>
       <span
-        className={`flex-1 text-center z-10 transition-colors duration-300 ${
-          isDark ? "text-[#0a0f1e]" : "text-primary/40"
+        className={`flex-1 flex items-center justify-center z-10 transition-colors duration-300 ${
+          isDark ? "text-[#0a0f1e]" : "text-primary/30"
         }`}
       >
-        Dk
+        <Icon name="dark_mode" filled={isDark} className="text-[18px]" />
       </span>
 
       {/* Sliding pill */}
