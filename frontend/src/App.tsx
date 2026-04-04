@@ -15,13 +15,22 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/page.json")
+    fetch("/api/page/")
       .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load page.json: ${r.status}`);
+        if (!r.ok) throw new Error(`${r.status}`);
         return r.json();
       })
       .then(setConfig)
-      .catch((e) => setError(e.message));
+      .catch(() => {
+        // Fallback to static file if Django is not running
+        fetch("/page.json")
+          .then((r) => {
+            if (!r.ok) throw new Error(`${r.status}`);
+            return r.json();
+          })
+          .then(setConfig)
+          .catch((e) => setError(e.message));
+      });
   }, []);
 
   if (error) {

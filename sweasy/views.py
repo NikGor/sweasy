@@ -1,11 +1,15 @@
-from django.shortcuts import render
+from django.http import JsonResponse
+
+from .models import PageSnapshot
 
 
-def home_view(request):
-    return render(
-        request,
-        "home.html",
-        {
-            "hero_image_url": "https://dummyimage.com/1600x900/dfe7f2/1f3a5f.jpg&text=Sweasy+Swiss+Guide",
-        },
-    )
+def page_api(request):
+    """Serve the latest page config from DB."""
+    try:
+        snapshot = PageSnapshot.objects.latest()
+    except PageSnapshot.DoesNotExist:
+        return JsonResponse({"error": "No page generated yet"}, status=404)
+
+    response = JsonResponse(snapshot.data, json_dumps_params={"ensure_ascii": False})
+    response["Access-Control-Allow-Origin"] = "*"
+    return response

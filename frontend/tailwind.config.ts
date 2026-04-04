@@ -1,7 +1,33 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}", "./public/page.json"],
+  safelist: [
+    // Dynamic accent colors from AI-generated page.json
+    "bg-[#FF2D55]",
+    "bg-[#00FF9D]",
+    "bg-[#FF6675]",
+    "bg-[#6A001A]",
+    "text-[#FF2D55]",
+    "text-[#00FF9D]",
+    "text-[#FF6675]",
+    "text-[#6A001A]",
+    // Rotate classes
+    "-rotate-1",
+    "-rotate-2",
+    "rotate-1",
+    "rotate-2",
+    // BG classes used in facts/badges
+    "bg-primary",
+    "bg-primary-container",
+    "bg-secondary",
+    "bg-secondary-container",
+    "bg-tertiary-container",
+    "text-primary",
+    "text-white",
+    "text-secondary-container",
+    "text-on-surface-variant",
+  ],
   darkMode: "class",
   theme: {
     extend: {

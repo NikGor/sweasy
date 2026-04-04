@@ -275,16 +275,19 @@ def generate_page(
         upscaled = upscale_hero(hero_source, hero_out)
         page.hero.image_url = f"/media/{upscaled.name}"
 
+    page_data = page.model_dump(by_alias=True)
+
     # Save to file
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
-        json.dumps(
-            page.model_dump(by_alias=True),
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(page_data, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
     logger.info("Page config saved to %s", output)
+
+    # Save to DB
+    from sweasy.models import PageSnapshot
+    PageSnapshot.objects.create(data=page_data)
+    logger.info("Page config saved to database")
 
     return page

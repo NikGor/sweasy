@@ -11,17 +11,17 @@ export default function Facts({ config }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: number) => {
-    scrollRef.current?.scrollBy({ left: dir * 420, behavior: "smooth" });
+    scrollRef.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
   };
 
   return (
-    <section id="facts" className="py-16 md:py-24 bg-surface-container-low overflow-hidden">
-      <div className="px-6 md:px-8 mb-10 md:mb-16 flex justify-between items-end">
+    <section id="facts" className="py-10 sm:py-16 md:py-24 bg-surface-container-low overflow-hidden">
+      <div className="px-4 sm:px-6 md:px-8 mb-6 sm:mb-10 md:mb-16 flex justify-between items-end">
         <div>
-          <h3 className="font-headline font-black text-3xl md:text-6xl text-primary tracking-tighter uppercase">
+          <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary tracking-tighter uppercase">
             {config.title}
           </h3>
-          <p className="text-on-surface-variant font-bold uppercase tracking-widest mt-2 text-sm">
+          <p className="text-on-surface-variant font-bold uppercase tracking-widest mt-1 sm:mt-2 text-xs sm:text-sm">
             {config.subtitle}
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function Facts({ config }: Props) {
       </div>
       <div
         ref={scrollRef}
-        className="flex gap-4 md:gap-8 px-6 md:px-8 overflow-x-auto pb-8 md:pb-12 no-scrollbar snap-x snap-mandatory"
+        className="flex gap-3 sm:gap-4 md:gap-8 px-4 sm:px-6 md:px-8 overflow-x-auto pb-6 sm:pb-8 md:pb-12 no-scrollbar snap-x snap-mandatory"
       >
         {config.facts.map((fact) => (
           <FactCard key={fact.num} {...fact} />

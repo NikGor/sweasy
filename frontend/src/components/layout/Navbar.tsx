@@ -12,8 +12,8 @@ const SECTIONS = [
 
 export default function Navbar({ config }: Props) {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-8 py-4">
-      <a href="#" className="text-2xl font-black text-primary tracking-tighter uppercase font-headline">
+    <nav className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-4 sm:px-6 md:px-8 py-3 sm:py-4">
+      <a href="#" className="text-xl sm:text-2xl font-black text-primary tracking-tighter uppercase font-headline">
         {config.brand}
       </a>
       <div className="hidden md:flex items-center gap-8">
