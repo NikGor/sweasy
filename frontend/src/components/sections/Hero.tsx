@@ -45,7 +45,7 @@ export default function Hero({ config }: Props) {
               href="https://t.me/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#FF2D55] hover:bg-[#ff4d70] text-white font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter shadow-[3px_3px_0_0_rgba(0,0,0,0.3)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]"
+              className="bg-[#229ED9] hover:bg-[#3aafe3] text-white font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter shadow-[3px_3px_0_0_rgba(0,0,0,0.3)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]"
             >
               <Icon name="send" filled className="text-[18px]" />
               Написать в Telegram
