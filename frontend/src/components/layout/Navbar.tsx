@@ -1,5 +1,6 @@
 import type { NavbarConfig } from "../../config/types";
 import ThemeToggle from "../ui/ThemeToggle";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 interface Props {
   config: NavbarConfig;
@@ -17,8 +18,9 @@ export default function Navbar({ config }: Props) {
       <a href="#" className="text-xl sm:text-2xl font-black text-primary dark:text-white tracking-tighter uppercase font-headline">
         {config.brand}
       </a>
-      <div className="flex items-center gap-4 md:gap-6">
+      <div className="flex items-center gap-2 sm:gap-3 md:gap-6">
         <ThemeToggle />
+        <LanguageSwitcher />
         <div className="hidden md:flex items-center gap-8">
           {SECTIONS.map((s) => (
             <a
