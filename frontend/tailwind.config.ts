@@ -29,6 +29,8 @@ const config: Config = {
     "text-on-surface-variant",
   ],
   darkMode: "class",
+  // Accent dark-mode backgrounds used across components
+  // (tailwind jit arbitrary values already scan TS files, safelist not strictly needed)
   theme: {
     extend: {
       colors: {

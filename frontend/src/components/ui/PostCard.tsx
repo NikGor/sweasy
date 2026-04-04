@@ -8,7 +8,7 @@ interface PostCardProps {
 
 export default function PostCard({ image, alt, caption, badge, offset }: PostCardProps) {
   return (
-    <div className={`group relative aspect-[3/4] overflow-hidden rounded-lg sm:rounded-xl bg-surface-container-high ${offset ? "sm:mt-12" : ""}`}>
+    <div className={`group relative aspect-[3/4] overflow-hidden rounded-lg sm:rounded-xl bg-surface-container-high dark:bg-[#1a2133] ${offset ? "sm:mt-12" : ""}`}>
       <img
         src={image}
         alt={alt}

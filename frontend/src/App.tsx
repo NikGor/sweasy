@@ -35,10 +35,10 @@ export default function App() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-surface text-primary">
+      <div className="min-h-screen flex items-center justify-center bg-surface dark:bg-[#0a0f1e] text-primary dark:text-white">
         <div className="text-center p-8">
           <h1 className="font-headline font-black text-2xl mb-4">Page not generated yet</h1>
-          <p className="text-on-surface-variant">Run <code className="bg-surface-container-high px-2 py-1 rounded">python manage.py generate_page</code> to create page.json</p>
+          <p className="text-on-surface-variant dark:text-white/60">Run <code className="bg-surface-container-high dark:bg-[#1a2133] px-2 py-1 rounded">python manage.py generate_page</code> to create page.json</p>
         </div>
       </div>
     );
@@ -46,8 +46,8 @@ export default function App() {
 
   if (!config) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-surface">
-        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-surface dark:bg-[#0a0f1e]">
+        <div className="w-8 h-8 border-4 border-primary dark:border-white border-t-transparent dark:border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
