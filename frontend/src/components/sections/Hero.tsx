@@ -1,4 +1,5 @@
 import Badge from "../ui/Badge";
+import Icon from "../ui/Icon";
 import type { HeroConfig } from "../../config/types";
 
 interface Props {
@@ -34,9 +35,29 @@ export default function Hero({ config }: Props) {
           </div>
 
           {/* Subtitle — mobile version */}
-          <p className="md:hidden text-white/80 text-sm leading-relaxed max-w-sm">
+          <p className="md:hidden text-white/80 text-sm leading-relaxed max-w-sm mb-4">
             {config.subtitle}
           </p>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-start">
+            <a
+              href="https://t.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#FF2D55] hover:bg-[#ff4d70] text-white font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter shadow-[3px_3px_0_0_rgba(0,0,0,0.3)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]"
+            >
+              <Icon name="send" filled className="text-[18px]" />
+              Написать в Telegram
+            </a>
+            <a
+              href="#"
+              className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter"
+            >
+              <Icon name="play_circle" filled className="text-[18px]" />
+              Интервью со Стасом
+            </a>
+          </div>
         </div>
 
         {/* Subtitle card — tablet+ */}
