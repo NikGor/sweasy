@@ -32,5 +32,4 @@ node_modules/
 instagram_archive/
 
 # Generated frontend assets
-frontend/public/media/
 frontend/public/page.json
