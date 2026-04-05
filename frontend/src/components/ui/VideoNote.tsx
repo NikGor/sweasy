@@ -61,7 +61,7 @@ export default function VideoNote({ src, replyHref = "https://t.me/" }: Props) {
 
   return (
     <div
-      className={`fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 transition-all duration-300 ${
+      className={`fixed bottom-20 right-4 md:bottom-10 md:right-10 lg:bottom-16 lg:right-16 z-40 transition-all duration-300 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
@@ -108,9 +108,9 @@ export default function VideoNote({ src, replyHref = "https://t.me/" }: Props) {
               type="button"
               onClick={close}
               aria-label="Закрыть"
-              className="absolute -top-1 -right-1 z-10 w-7 h-7 rounded-full bg-[#0a0f1e] dark:bg-white text-white dark:text-[#0a0f1e] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+              className="absolute -top-1 -right-1 z-10 w-7 h-7 md:w-9 md:h-9 rounded-full bg-[#0a0f1e] dark:bg-white text-white dark:text-[#0a0f1e] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
             >
-              <span className="material-symbols-outlined text-[16px]">close</span>
+              <span className="material-symbols-outlined text-[16px] md:text-[20px]">close</span>
             </button>
 
             {/* Video circle */}
@@ -118,7 +118,7 @@ export default function VideoNote({ src, replyHref = "https://t.me/" }: Props) {
               type="button"
               onClick={togglePlay}
               aria-label={isPlaying ? "Пауза" : "Играть"}
-              className="relative aspect-square w-40 sm:w-44 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.35)] border-4 border-white dark:border-[#0a0f1e] bg-black group cursor-pointer overflow-hidden"
+              className="relative aspect-square w-40 sm:w-48 md:w-64 lg:w-72 xl:w-80 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.35)] border-4 border-white dark:border-[#0a0f1e] bg-black group cursor-pointer overflow-hidden"
               style={{ borderRadius: "9999px" }}
             >
               <video
@@ -133,8 +133,8 @@ export default function VideoNote({ src, replyHref = "https://t.me/" }: Props) {
               {/* Play overlay */}
               {!isPlaying && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors rounded-full">
-                  <div className="w-14 h-14 rounded-full bg-white/95 text-[#0a0f1e] flex items-center justify-center shadow-lg">
-                    <Icon name="play_arrow" filled className="text-[32px] ml-0.5" />
+                  <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-white/95 text-[#0a0f1e] flex items-center justify-center shadow-lg">
+                    <Icon name="play_arrow" filled className="text-[32px] md:text-[44px] ml-0.5" />
                   </div>
                 </div>
               )}
@@ -147,9 +147,9 @@ export default function VideoNote({ src, replyHref = "https://t.me/" }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("video_note_reply")}
-            className="bg-[#229ED9] hover:bg-[#3aafe3] text-white font-headline font-black text-xs px-5 py-2.5 rounded-full transition-all flex items-center gap-2 uppercase tracking-tighter shadow-lg active:scale-95"
+            className="bg-[#229ED9] hover:bg-[#3aafe3] text-white font-headline font-black text-xs md:text-sm px-5 md:px-6 py-2.5 md:py-3 rounded-full transition-all flex items-center gap-2 uppercase tracking-tighter shadow-lg active:scale-95"
           >
-            <Icon name="reply" filled className="text-[16px]" />
+            <Icon name="reply" filled className="text-[16px] md:text-[18px]" />
             Ответить
           </a>
         </div>
