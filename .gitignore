@@ -31,5 +31,17 @@ node_modules/
 # Instagram archive
 instagram_archive/
 
+# Claude Code / internal tooling
+.claude/
+.mcp.json
+AGENTS.md
+DESIGN.md
+desktop.html
+mobile.html
+docs/
+.github/
+
 # Generated frontend assets
 frontend/public/page.json
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
