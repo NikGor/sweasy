@@ -7,9 +7,9 @@ interface Props {
 
 export default function LiveFeed({ config }: Props) {
   return (
-    <section id="feed" className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-surface dark:bg-[#0a0f1e]">
+    <section id="feed" className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-surface dark:bg-[#0a0f1e]">
       {/* Header */}
-      <div className="mb-6 sm:mb-10 md:mb-16 flex justify-between items-end">
+      <div className="mb-6 sm:mb-8 md:mb-12 flex justify-between items-end">
         <div>
           <h2 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase leading-none whitespace-pre-line">
             {config.title}

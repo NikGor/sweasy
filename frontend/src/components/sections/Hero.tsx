@@ -9,7 +9,7 @@ interface Props {
 
 export default function Hero({ config }: Props) {
   return (
-    <section className="relative h-[85vh] sm:h-[80vh] md:h-[921px] w-full flex items-end overflow-hidden">
+    <section className="relative h-svh md:h-screen w-full flex items-end overflow-hidden">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"
@@ -18,7 +18,7 @@ export default function Hero({ config }: Props) {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full px-4 sm:px-6 md:px-8 pb-8 sm:pb-12 md:pb-20 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-end">
+      <div className="relative z-20 w-full px-4 sm:px-6 md:px-8 pb-24 sm:pb-16 md:pb-20 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-end">
         <div className="md:col-span-8">
           {/* Badges */}
           <div className="flex flex-col gap-3 sm:gap-4 items-start mb-4 sm:mb-8">

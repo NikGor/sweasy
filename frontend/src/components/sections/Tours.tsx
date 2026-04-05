@@ -9,8 +9,8 @@ interface Props {
 
 export default function Tours({ config }: Props) {
   return (
-    <section id="tours" className="py-10 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-surface-container-low dark:bg-[#111827]">
-      <div className="mb-6 sm:mb-10 md:mb-16">
+    <section id="tours" className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-surface-container-low dark:bg-[#111827]">
+      <div className="mb-6 sm:mb-8 md:mb-12">
         <h2 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase">
           {config.title}
         </h2>
