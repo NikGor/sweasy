@@ -31,14 +31,14 @@ export default function Impressum() {
         <div className="space-y-1">
           <p>
             Email:{" "}
-            <a href="mailto:hello@sweasy.ch" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
-              hello@sweasy.ch
+            <a href="mailto:hello@example.com" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
+              [Placeholder — email]
             </a>
           </p>
           <p>
             Telegram:{" "}
-            <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
-              @sweasy
+            <a href="https://t.me/YOUR_TELEGRAM" target="_blank" rel="noopener noreferrer" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
+              [Placeholder — Telegram]
             </a>
           </p>
           <p className="text-on-surface-variant dark:text-white/60">[Placeholder — телефон]</p>
