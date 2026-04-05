@@ -44,7 +44,7 @@ export default function Footer({ config }: Props) {
               {config.brand}
             </div>
             <p className="text-on-surface-variant dark:text-white/60 text-sm leading-relaxed max-w-xs">
-              Авторские туры по Швейцарии с русскоязычным гидом. Настоящая страна глазами тех, кто в ней влюблён.
+              Индивидуальные и авторские туры по Швейцарии с частным русскоязычным гидом. Альпы, озёра, города и настоящая жизнь страны.
             </p>
           </div>
 

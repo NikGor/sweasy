@@ -7,9 +7,9 @@ interface Props {
 }
 
 const SECTIONS = [
-  { label: "Feed", href: "#feed" },
-  { label: "Tours", href: "#tours" },
-  { label: "Facts", href: "#facts" },
+  { label: "Лента", href: "#feed" },
+  { label: "Туры", href: "#tours" },
+  { label: "Факты", href: "#facts" },
 ];
 
 export default function Navbar({ config }: Props) {

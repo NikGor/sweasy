@@ -1,10 +1,10 @@
 import Icon from "../ui/Icon";
 
 const items = [
-  { icon: "explore", label: "Guide", href: "#", filled: true },
-  { icon: "grid_view", label: "Feed", href: "#feed", filled: false },
-  { icon: "tour", label: "Tours", href: "#tours", filled: false },
-  { icon: "info", label: "Facts", href: "#facts", filled: false },
+  { icon: "explore", label: "Гид", href: "#", filled: true },
+  { icon: "grid_view", label: "Лента", href: "#feed", filled: false },
+  { icon: "tour", label: "Туры", href: "#tours", filled: false },
+  { icon: "info", label: "Факты", href: "#facts", filled: false },
 ];
 
 export default function BottomNav() {

@@ -71,7 +71,7 @@ export default function Hero({ config }: Props) {
             <div className="flex items-center gap-2">
               <span className="w-12 h-1 bg-accent-green" />
               <span className="text-white font-black uppercase text-xs tracking-widest">
-                Experience Swiss Alps
+                Швейцария по-русски
               </span>
             </div>
           </div>
