@@ -105,8 +105,22 @@ def page_upload(request):
 
 
 def frontend_view(request):
-    """Serve the React SPA index.html."""
-    index = Path(settings.FRONTEND_DIR) / "index.html"
+    """Serve root-level static files from frontend/dist or fall back to SPA index.html."""
+    frontend_dir = Path(settings.FRONTEND_DIR).resolve()
+
+    # Try to serve a static file matching the request path (robots.txt, sitemap.xml, video-note.mp4, etc.)
+    requested = request.path.lstrip("/")
+    if requested:
+        candidate = (frontend_dir / requested).resolve()
+        try:
+            candidate.relative_to(frontend_dir)
+            if candidate.is_file():
+                content_type = mimetypes.guess_type(str(candidate))[0] or "application/octet-stream"
+                return FileResponse(open(candidate, "rb"), content_type=content_type)
+        except ValueError:
+            pass  # Outside frontend_dir — ignore
+
+    index = frontend_dir / "index.html"
     if index.exists():
         return HttpResponse(index.read_text(), content_type="text/html")
     return HttpResponse("Frontend not built. Run: cd frontend && npm run build", status=404)
