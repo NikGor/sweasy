@@ -75,8 +75,8 @@ export default function Privacy() {
         </h2>
         <p>
           По всем вопросам, связанным с обработкой персональных данных, пишите на{" "}
-          <a href="mailto:privacy@sweasy.ch" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
-            privacy@sweasy.ch
+          <a href="mailto:hello@example.com" className="text-[#FF2D55] dark:text-[#00FF9D] hover:underline font-bold">
+            [Placeholder — email]
           </a>
           .
         </p>

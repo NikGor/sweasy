@@ -113,10 +113,10 @@ export default function Footer({ config }: Props) {
             <ul className="space-y-2.5 mb-5">
               <li>
                 <a
-                  href="mailto:hello@sweasy.ch"
+                  href="mailto:hello@example.com"
                   className="text-primary dark:text-white font-headline font-black text-sm tracking-tighter hover:text-[#FF2D55] dark:hover:text-[#00FF9D] transition-colors break-all"
                 >
-                  hello@sweasy.ch
+                  [Placeholder — email]
                 </a>
               </li>
             </ul>
