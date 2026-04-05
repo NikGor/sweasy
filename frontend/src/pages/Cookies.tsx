@@ -2,7 +2,10 @@ import LegalLayout from "../components/layout/LegalLayout";
 
 export default function Cookies() {
   return (
-    <LegalLayout title="Политика cookies">
+    <LegalLayout
+      title="Политика cookies"
+      description="Как Sweasy использует cookies и как вы можете управлять своими настройками."
+    >
       <section>
         <h2 className="font-headline font-black text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-tighter mb-2 sm:mb-3">
           Что такое cookies

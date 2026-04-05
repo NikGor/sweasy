@@ -2,7 +2,10 @@ import LegalLayout from "../components/layout/LegalLayout";
 
 export default function Privacy() {
   return (
-    <LegalLayout title="Политика конфиденциальности">
+    <LegalLayout
+      title="Политика конфиденциальности"
+      description="Как Sweasy собирает, использует и защищает ваши персональные данные. GDPR и швейцарский FADP."
+    >
       <section>
         <h2 className="font-headline font-black text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-tighter mb-2 sm:mb-3">
           1. Общие положения

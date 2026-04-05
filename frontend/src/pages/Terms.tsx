@@ -2,7 +2,10 @@ import LegalLayout from "../components/layout/LegalLayout";
 
 export default function Terms() {
   return (
-    <LegalLayout title="Условия использования">
+    <LegalLayout
+      title="Условия использования"
+      description="Условия использования сайта и услуг Sweasy — авторских туров по Швейцарии."
+    >
       <section>
         <h2 className="font-headline font-black text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-tighter mb-2 sm:mb-3">
           1. Принятие условий

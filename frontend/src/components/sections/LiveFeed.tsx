@@ -11,9 +11,9 @@ export default function LiveFeed({ config }: Props) {
       {/* Header */}
       <div className="mb-6 sm:mb-10 md:mb-16 flex justify-between items-end">
         <div>
-          <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase leading-none whitespace-pre-line">
+          <h2 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase leading-none whitespace-pre-line">
             {config.title}
-          </h3>
+          </h2>
           <p className="mt-1 sm:mt-2 md:mt-4 text-on-surface-variant dark:text-white/60 font-bold uppercase tracking-widest text-xs sm:text-sm">
             {config.subtitle}
           </p>

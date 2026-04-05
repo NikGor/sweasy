@@ -2,17 +2,24 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import ThemeToggle from "../ui/ThemeToggle";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
+import { useSEO } from "../../hooks/useSEO";
 
 interface Props {
   title: string;
+  description?: string;
   updatedAt?: string;
   children: React.ReactNode;
 }
 
-export default function LegalLayout({ title, updatedAt = "2026-04-05", children }: Props) {
+export default function LegalLayout({ title, description, updatedAt = "2026-04-05", children }: Props) {
+  useSEO({
+    title: `${title} — Sweasy`,
+    description: description ?? `${title} — Sweasy, авторские туры по Швейцарии.`,
+    noindex: true,
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${title} — Sweasy`;
   }, [title]);
 
   return (

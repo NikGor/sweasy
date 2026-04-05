@@ -12,6 +12,8 @@ export default function PostCard({ image, alt, caption, badge, offset }: PostCar
       <img
         src={image}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
       />
       <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4">

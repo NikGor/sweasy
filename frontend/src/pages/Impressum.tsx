@@ -2,7 +2,10 @@ import LegalLayout from "../components/layout/LegalLayout";
 
 export default function Impressum() {
   return (
-    <LegalLayout title="Impressum">
+    <LegalLayout
+      title="Impressum"
+      description="Юридические и контактные данные оператора сайта Sweasy в соответствии со швейцарским законодательством."
+    >
       <section>
         <h2 className="font-headline font-black text-xl sm:text-2xl text-primary dark:text-white uppercase tracking-tighter mb-2 sm:mb-3">
           Оператор сайта

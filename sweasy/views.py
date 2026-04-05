@@ -6,17 +6,87 @@ from django.conf import settings
 from django.http import FileResponse, HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import PageSnapshot
+from .models import Fact, HeroBadge, PageSnapshot, Post, SiteSettings, Tour
+
+
+def _build_page_config():
+    """Assemble page config dict from content models."""
+    s = SiteSettings.load()
+
+    badges = [
+        {"text": b.text, "bg": b.bg, "color": b.color, "rotate": b.rotate}
+        for b in HeroBadge.objects.all()
+    ]
+
+    posts = [
+        {
+            "image_url": p.get_image_url(),
+            "alt": p.alt,
+            "caption": p.caption,
+            "badge": {
+                "text": p.badge_text,
+                "bg": p.badge_bg,
+                "color": p.badge_color,
+                "rotate": p.badge_rotate,
+            },
+            "offset": p.offset,
+        }
+        for p in Post.objects.filter(is_published=True)
+    ]
+
+    tours = [
+        {
+            "title": t.title,
+            "description": t.description,
+            "image_url": t.get_image_url(),
+            "badge": {
+                "text": t.badge_text,
+                "bg": t.badge_bg,
+                "color": t.badge_color,
+                "rotate": t.badge_rotate,
+            },
+        }
+        for t in Tour.objects.filter(is_published=True)
+    ]
+
+    facts = [
+        {
+            "num": f.num,
+            "title": f.title,
+            "text": f.text,
+            "bg": f.bg,
+            "numColor": f.num_color,
+        }
+        for f in Fact.objects.filter(is_published=True)
+    ]
+
+    return {
+        "navbar":    {"brand": s.brand},
+        "mood_bar":  {"label": s.mood_label, "status": s.mood_status},
+        "hero":      {"image_url": s.hero_image_url, "badges": badges, "subtitle": s.hero_subtitle},
+        "live_feed": {"title": s.live_feed_title, "subtitle": s.live_feed_subtitle, "posts": posts},
+        "tours":     {"title": s.tours_title, "subtitle": s.tours_subtitle, "tours": tours},
+        "facts":     {"title": s.facts_title, "subtitle": s.facts_subtitle, "facts": facts},
+        "cta":       {"headline": s.cta_headline},
+        "footer":    {"brand": s.brand, "copyright": s.copyright},
+    }
 
 
 def page_api(request):
-    """Serve the latest page config from DB."""
-    try:
-        snapshot = PageSnapshot.objects.latest()
-    except PageSnapshot.DoesNotExist:
-        return JsonResponse({"error": "No page generated yet"}, status=404)
+    """Serve page config from content models (falls back to latest snapshot if DB is empty)."""
+    has_content = Tour.objects.exists() or Post.objects.exists()
 
-    response = JsonResponse(snapshot.data, json_dumps_params={"ensure_ascii": False})
+    if has_content:
+        data = _build_page_config()
+    else:
+        # Fallback: latest AI-generated snapshot
+        try:
+            snapshot = PageSnapshot.objects.latest()
+            data = snapshot.data
+        except PageSnapshot.DoesNotExist:
+            return JsonResponse({"error": "No content yet"}, status=404)
+
+    response = JsonResponse(data, json_dumps_params={"ensure_ascii": False})
     response["Access-Control-Allow-Origin"] = "*"
     return response
 

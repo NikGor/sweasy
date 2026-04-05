@@ -18,9 +18,9 @@ export default function Facts({ config }: Props) {
     <section id="facts" className="py-10 sm:py-16 md:py-24 bg-surface-container-low dark:bg-[#111827] overflow-hidden">
       <div className="px-4 sm:px-6 md:px-8 mb-6 sm:mb-10 md:mb-16 flex justify-between items-end">
         <div>
-          <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase">
+          <h2 className="font-headline font-black text-2xl sm:text-3xl md:text-6xl text-primary dark:text-white tracking-tighter uppercase">
             {config.title}
-          </h3>
+          </h2>
           <p className="text-on-surface-variant dark:text-white/60 font-bold uppercase tracking-widest mt-1 sm:mt-2 text-xs sm:text-sm">
             {config.subtitle}
           </p>

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function NotFound() {
-  useEffect(() => {
-    document.title = "404 — Sweasy";
-  }, []);
+  useSEO({
+    title: "404 — страница не найдена — Sweasy",
+    description: "Страница не найдена. Возможно, она спряталась за облаками.",
+    noindex: true,
+  });
 
   return (
     <div className="min-h-screen bg-surface dark:bg-[#0a0f1e] flex items-center justify-center px-4 sm:px-6 md:px-8">

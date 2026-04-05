@@ -9,10 +9,17 @@ import Tours from "../components/sections/Tours";
 import Facts from "../components/sections/Facts";
 import CTA from "../components/sections/CTA";
 import type { PageConfig } from "../config/types";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Home() {
   const [config, setConfig] = useState<PageConfig | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  useSEO({
+    title: "Sweasy — авторские туры по Швейцарии с русскоязычным гидом",
+    description:
+      "Авторские туры по Швейцарии с русскоязычным гидом. Альпы, озёра, деревни и настоящая швейцарская жизнь глазами того, кто в ней влюблён.",
+  });
 
   useEffect(() => {
     fetch("/api/page/")

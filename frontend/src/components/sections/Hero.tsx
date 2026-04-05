@@ -1,6 +1,7 @@
 import Badge from "../ui/Badge";
 import Icon from "../ui/Icon";
 import type { HeroConfig } from "../../config/types";
+import { trackEvent } from "../../lib/analytics";
 
 interface Props {
   config: HeroConfig;
@@ -25,6 +26,7 @@ export default function Hero({ config }: Props) {
               <Badge
                 key={i}
                 {...badge}
+                as={i === 0 ? "h1" : "h2"}
                 className={
                   i === 0
                     ? "text-base sm:text-xl md:text-4xl"
@@ -45,6 +47,7 @@ export default function Hero({ config }: Props) {
               href="https://t.me/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("cta_click", { location: "hero", target: "telegram" })}
               className="bg-[#229ED9] hover:bg-[#3aafe3] text-white font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter shadow-[3px_3px_0_0_rgba(0,0,0,0.3)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.3)]"
             >
               <Icon name="send" filled className="text-[18px]" />
@@ -52,6 +55,7 @@ export default function Hero({ config }: Props) {
             </a>
             <a
               href="#"
+              onClick={() => trackEvent("cta_click", { location: "hero", target: "interview" })}
               className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 font-headline font-black text-xs sm:text-sm px-4 sm:px-6 py-3 sm:py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-tighter"
             >
               <Icon name="play_circle" filled className="text-[18px]" />

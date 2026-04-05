@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { updateConsent, trackEvent } from "../../lib/analytics";
 
 const STORAGE_KEY = "sweasy-cookie-consent";
 
@@ -15,6 +16,8 @@ export default function CookieBanner() {
 
   const decide = (choice: "accept" | "reject") => {
     localStorage.setItem(STORAGE_KEY, choice);
+    updateConsent(choice === "accept");
+    trackEvent("cookie_consent", { choice });
     setShow(false);
   };
 

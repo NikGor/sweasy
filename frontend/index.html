@@ -3,12 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Stan Live — Swiss Guide</title>
+    <meta name="theme-color" content="#001b44" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0f1e" media="(prefers-color-scheme: dark)" />
+
+    <!-- Primary Meta Tags -->
+    <title>Sweasy — авторские туры по Швейцарии с русскоязычным гидом</title>
+    <meta name="title" content="Sweasy — авторские туры по Швейцарии с русскоязычным гидом" />
+    <meta name="description" content="Авторские туры по Швейцарии с русскоязычным гидом. Альпы, озёра, деревни и настоящая швейцарская жизнь глазами того, кто в ней влюблён." />
+    <meta name="keywords" content="туры по Швейцарии, русскоязычный гид, авторские туры, Альпы, Цюрих, Люцерн, Интерлакен, Женева, экскурсии Швейцария, Swiss tours" />
+    <meta name="author" content="Sweasy" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="language" content="Russian" />
+    <meta name="geo.region" content="CH" />
+    <meta name="geo.placename" content="Switzerland" />
+    <link rel="canonical" href="https://sweasy.ch/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sweasy.ch/" />
+    <meta property="og:site_name" content="Sweasy" />
+    <meta property="og:title" content="Sweasy — авторские туры по Швейцарии с русскоязычным гидом" />
+    <meta property="og:description" content="Авторские туры по Швейцарии с русскоязычным гидом. Альпы, озёра, деревни и настоящая швейцарская жизнь." />
+    <meta property="og:image" content="https://sweasy.ch/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="uk_UA" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://sweasy.ch/" />
+    <meta name="twitter:title" content="Sweasy — авторские туры по Швейцарии" />
+    <meta name="twitter:description" content="Авторские туры по Швейцарии с русскоязычным гидом. Настоящая страна глазами тех, кто в ней влюблён." />
+    <meta name="twitter:image" content="https://sweasy.ch/og-image.jpg" />
+
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- JSON-LD: Organization / LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Sweasy",
+      "description": "Авторские туры по Швейцарии с русскоязычным гидом",
+      "url": "https://sweasy.ch",
+      "logo": "https://sweasy.ch/logo.png",
+      "image": "https://sweasy.ch/og-image.jpg",
+      "email": "hello@sweasy.ch",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Switzerland"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CH"
+      },
+      "sameAs": [
+        "https://t.me/sweasy",
+        "https://instagram.com/sweasy",
+        "https://youtube.com/@sweasy"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sweasy",
+      "url": "https://sweasy.ch",
+      "inLanguage": "ru"
+    }
+    </script>
   </head>
   <body class="bg-surface text-on-surface font-body">
     <div id="root"></div>
+    <noscript>
+      <div style="padding:2rem;text-align:center;font-family:sans-serif">
+        Для работы сайта Sweasy необходим включённый JavaScript.
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
