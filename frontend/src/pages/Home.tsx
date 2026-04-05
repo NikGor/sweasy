@@ -8,6 +8,7 @@ import LiveFeed from "../components/sections/LiveFeed";
 import Tours from "../components/sections/Tours";
 import Facts from "../components/sections/Facts";
 import CTA from "../components/sections/CTA";
+import VideoNote from "../components/ui/VideoNote";
 import type { PageConfig } from "../config/types";
 import { useSEO } from "../hooks/useSEO";
 
@@ -77,6 +78,7 @@ export default function Home() {
       </main>
       <Footer config={config.footer} />
       <BottomNav />
+      <VideoNote src="/video-note.mp4" />
     </>
   );
 }
