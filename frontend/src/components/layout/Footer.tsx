@@ -5,10 +5,18 @@ interface Props {
   config: FooterConfig;
 }
 
-const SECTIONS = [
-  { label: "Лента", href: "/#feed" },
-  { label: "Туры", href: "/#tours" },
-  { label: "Факты", href: "/#facts" },
+const SERVICES = [
+  { label: "Индивидуальные туры", to: "/individual-tours" },
+  { label: "Хайкинг", to: "/hiking" },
+  { label: "Яхтинг", to: "/yachting" },
+  { label: "VIP-туры", to: "/vip-tours" },
+  { label: "Семейные туры", to: "/family-tours" },
+];
+
+const DESTINATIONS = [
+  { label: "Цюрих", to: "/zurich" },
+  { label: "Люцерн", to: "/lucerne" },
+  { label: "Интерлакен", to: "/interlaken" },
 ];
 
 const LEGAL = [
@@ -29,9 +37,9 @@ export default function Footer({ config }: Props) {
     <footer className="bg-surface-container-high dark:bg-[#050811] w-full pt-12 sm:pt-16 md:pt-20 pb-24 md:pb-8 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Top grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16">
           {/* Brand column */}
-          <div className="sm:col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <div className="text-2xl sm:text-3xl font-black text-primary dark:text-white uppercase font-headline tracking-tighter mb-3">
               {config.brand}
             </div>
@@ -40,20 +48,39 @@ export default function Footer({ config }: Props) {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Services */}
           <div>
             <h4 className="font-headline font-black text-xs text-on-surface-variant dark:text-white/50 uppercase tracking-widest mb-4">
-              Навигация
+              Услуги
             </h4>
             <ul className="space-y-2.5">
-              {SECTIONS.map((s) => (
-                <li key={s.href}>
-                  <a
-                    href={s.href}
+              {SERVICES.map((s) => (
+                <li key={s.to}>
+                  <Link
+                    to={s.to}
                     className="text-primary dark:text-white font-headline font-black text-sm uppercase tracking-tighter hover:text-[#FF2D55] dark:hover:text-[#00FF9D] transition-colors"
                   >
                     {s.label}
-                  </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Destinations */}
+          <div>
+            <h4 className="font-headline font-black text-xs text-on-surface-variant dark:text-white/50 uppercase tracking-widest mb-4">
+              Направления
+            </h4>
+            <ul className="space-y-2.5">
+              {DESTINATIONS.map((d) => (
+                <li key={d.to}>
+                  <Link
+                    to={d.to}
+                    className="text-primary dark:text-white font-headline font-black text-sm uppercase tracking-tighter hover:text-[#FF2D55] dark:hover:text-[#00FF9D] transition-colors"
+                  >
+                    {d.label}
+                  </Link>
                 </li>
               ))}
             </ul>
